@@ -52,11 +52,11 @@ export const productModules: ProductModule[] = [
   {
     key: "reports",
     name: "Reports",
-    summary: "Inspection prep that used to take days, done in minutes.",
+    summary: "30+ built-in reports on everything you're already recording.",
     points: [
-      "30+ built-in reports",
-      "One-click CQC and CIW inspection packs",
+      "Operational, compliance and staffing reports",
       "Exportable, audit-ready formatting",
+      "One-click CQC/CIW inspection packs available as an add-on — see Inspection Report Packages",
     ],
   },
   {
@@ -75,6 +75,41 @@ export const productCallouts: string[] = [
   "Built CQC & CIW ready from day one",
   "UK-hosted, UK data residency",
   "Fully configurable — no two care companies work the same way, so your software shouldn't force them to.",
+];
+
+export type AddOnModule = {
+  key: string;
+  name: string;
+  summary: string;
+  href: string;
+  linkLabel: string;
+};
+
+export const addOnModules: AddOnModule[] = [
+  {
+    key: "training",
+    name: "Training & Compliance",
+    summary:
+      "In-platform course builder and curriculum pathways. Course completion auto-populates staff compliance — no manual re-entry.",
+    href: "/training",
+    linkLabel: "Learn more",
+  },
+  {
+    key: "policies",
+    name: "Policies & Procedures",
+    summary:
+      "A full, regulation-referenced policy suite generated for your organisation in minutes, with staff acknowledgement tracking.",
+    href: "/policies",
+    linkLabel: "Learn more",
+  },
+  {
+    key: "inspection-packages",
+    name: "Inspection Report Packages",
+    summary:
+      "One-click, inspector-ready CQC/CIW packs generated from data across the whole platform.",
+    href: "/pricing#inspection-packages",
+    linkLabel: "See pricing",
+  },
 ];
 
 export type TechPoint = {
@@ -96,7 +131,7 @@ export const techPoints: TechPoint[] = [
   {
     title: "AI used practically, not as a gimmick",
     description:
-      "AI-assisted cover finding, AI-assisted supervision note-taking, AI-generated policy suites. A human always confirms. AI never auto-decides anything that affects care.",
+      "AI Cover Assist is built into Core for every customer. AI-assisted supervision note-taking and AI-generated policy suites are available as add-ons. A human always confirms. AI never auto-decides anything that affects care.",
   },
   {
     title: "Serious about security and access",

@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { productCallouts, productModules } from "@/lib/content/product";
+import { addOnModules, productCallouts, productModules } from "@/lib/content/product";
 
 export function ProductOverview({ id = "product" }: { id?: string }) {
   return (
@@ -44,6 +45,38 @@ export function ProductOverview({ id = "product" }: { id?: string }) {
             </Reveal>
           ))}
         </ul>
+
+        <div className="mt-10">
+          <Reveal>
+            <p className="font-heading text-sm font-semibold uppercase tracking-widest text-slate-500">
+              Add-on modules
+            </p>
+          </Reveal>
+          <ul className="mt-4 grid gap-6 sm:grid-cols-3">
+            {addOnModules.map((module, index) => (
+              <Reveal as="li" key={module.key} delay={0.05 * index}>
+                <div className="flex h-full flex-col rounded-2xl border border-dashed border-teal-600/50 bg-white p-6">
+                  <span className="w-fit rounded-full bg-teal-50 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-teal-700">
+                    Add-on
+                  </span>
+                  <h3 className="mt-4 font-heading text-lg font-semibold text-navy-900">
+                    {module.name}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
+                    {module.summary}
+                  </p>
+                  <Link
+                    href={module.href}
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 underline underline-offset-4 hover:text-teal-800"
+                  >
+                    {module.linkLabel}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
 
         <Reveal delay={0.2}>
           <div className="mt-12 flex flex-col gap-4 rounded-2xl border border-navy-100 bg-white p-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-4">

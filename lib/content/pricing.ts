@@ -1,108 +1,204 @@
-export type PricingTier = {
-  key: string;
+// CareFlow pricing has four independent parts — Core seats, Support level,
+// Inspection Report Packages, and opt-in Add-ons. There are no feature-gated
+// tiers: every customer gets the full platform from day one.
+
+export type CoreSeat = {
+  key: "desktop" | "mobile";
   name: string;
-  price: string;
-  minimum: string;
-  positioning: string;
+  roles: string;
+  price: number;
+  unit: string;
   features: string[];
-  highlighted?: boolean;
 };
 
-export const pricingTiers: PricingTier[] = [
+export const coreSeats: CoreSeat[] = [
   {
-    key: "essentials",
-    name: "Essentials",
-    price: "£14",
-    minimum: "Min £180/mo",
-    positioning:
-      "Everything a care company needs to run day to day.",
+    key: "desktop",
+    name: "Desktop seat",
+    roles: "Company Admin, Registered Manager, Care Coordinator",
+    price: 49,
+    unit: "/user/month",
     features: [
-      "Staff",
-      "Clients",
-      "Rostering",
-      "Dashboard",
-      "Reports",
-      "Settings & Configuration",
+      "Form builders for care plans, risk assessments and more",
+      "Rostering, with AI Cover Assist",
+      "Standard reports",
+      "Role-based access control (RBAC)",
+      "Settings & configuration",
       "Messaging",
     ],
   },
   {
-    key: "professional",
-    name: "Professional",
-    price: "£19",
-    minimum: "Min £280/mo",
-    positioning: "Everything in Essentials, plus the tools for teams on the move.",
+    key: "mobile",
+    name: "Mobile seat",
+    roles: "Care Worker",
+    price: 12,
+    unit: "/user/month",
     features: [
-      "Everything in Essentials",
-      "Native mobile app for care workers",
-      "AI-assisted cover finding",
-      "One-click inspection packs",
-      "Priority support",
+      "Native iOS & Android app",
+      "Schedule & shift visibility",
+      "Clock-in / Electronic Visit Verification (EVV)",
+      "MAR (medication) recording",
+      "Notes & body maps",
+      "Messaging",
     ],
-    highlighted: true,
+  },
+];
+
+export const coreMinimum = 150;
+export const coreDifferentiator =
+  "No feature tiers. Every customer gets AI Cover Assist and the full rostering engine on day one — we don't hold core features back to upsell you.";
+
+export type SupportLevel = {
+  key: "basic" | "advanced" | "enterprise";
+  name: string;
+  coverage: string;
+  uplift: number; // fraction of Core spend, 0 for Basic
+  upliftMinimum: number; // £/mo
+  priceLabel: string;
+  responseCritical: string;
+  responseStandard: string;
+  description: string;
+  accountManager?: boolean;
+};
+
+export const supportLevels: SupportLevel[] = [
+  {
+    key: "basic",
+    name: "Basic",
+    coverage: "9am–5pm, Monday–Friday",
+    uplift: 0,
+    upliftMinimum: 0,
+    priceLabel: "Included, no uplift",
+    responseCritical: "4 business hours",
+    responseStandard: "Next business day",
+    description: "Standard office-hours cover, included with every account.",
+  },
+  {
+    key: "advanced",
+    name: "Advanced",
+    coverage: "24 hours a day, Monday–Friday",
+    uplift: 0.15,
+    upliftMinimum: 75,
+    priceLabel: "+15% on Core spend (min £75/mo)",
+    responseCritical: "1 hour",
+    responseStandard: "4 hours",
+    description: "Round-the-clock weekday cover for teams running early or late shifts.",
   },
   {
     key: "enterprise",
     name: "Enterprise",
-    price: "£26",
-    minimum: "Custom pricing available",
-    positioning: "Everything in Professional, plus finance and scale.",
-    features: [
-      "Everything in Professional",
-      "Finance — billing, invoicing, payroll export",
-      "AI-assisted supervision",
-      "Custom roles at scale",
-      "Dedicated support",
-    ],
+    coverage: "24/7/365, including weekends and bank holidays",
+    uplift: 0.25,
+    upliftMinimum: 250,
+    priceLabel: "+25% on Core spend (min £250/mo)",
+    responseCritical: "30 minutes",
+    responseStandard: "2 hours",
+    description: "Full around-the-clock cover with a dedicated named account manager.",
+    accountManager: true,
   },
 ];
 
-export const pricingUnit = "per client or bed / month";
+export const supportFraming =
+  "A rostering or EVV outage at 2am on a Saturday during a live domiciliary round isn't a minor inconvenience — it can affect whether a visit happens. Most residential and larger domiciliary providers will realistically want Advanced or Enterprise.";
+
+export type InspectionOption = {
+  key: string;
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  recommended?: boolean;
+};
+
+export const inspectionOptions: InspectionOption[] = [
+  {
+    key: "payg",
+    name: "Pay-as-you-go",
+    price: "£45",
+    description: "per pack generated",
+    features: ["One regulator framework — CQC or CIW", "No commitment"],
+  },
+  {
+    key: "subscription",
+    name: "Inspection Ready subscription",
+    price: "£59",
+    description: "per month, per site",
+    features: [
+      "Unlimited pack generation",
+      "Both CQC & CIW frameworks",
+      "Continuous readiness score tracking",
+    ],
+    recommended: true,
+  },
+  {
+    key: "additional-sites",
+    name: "Additional sites",
+    price: "£39",
+    description: "per month, per extra site",
+    features: ["For multi-site providers already on the subscription"],
+  },
+];
+
+export const inspectionPackContents = [
+  "Training matrix",
+  "Safer recruitment",
+  "Policy acknowledgement",
+  "Incidents",
+  "MAR summary",
+  "Mental capacity (MCA) records",
+];
+
+export const inspectionValueFraming = {
+  heading: "The strongest ROI in the whole pricing model",
+  body: "A pack is generated by the Registered Manager from data across the whole platform into one branded, inspector-ready PDF. That replaces 1–3 days of manual evidence-gathering — roughly £230–£780 in Registered Manager time at UK average salary — or a £1,000–£6,500 external mock-inspection consultant. At £45–£59, it's an easy yes, not a nice-to-have.",
+};
 
 export type AddOn = {
+  key: string;
   name: string;
+  price: string;
   description: string;
+  href?: string;
 };
 
 export const addOns: AddOn[] = [
   {
+    key: "training",
     name: "Training & Compliance LMS",
-    description: "Assign, track and certify staff training against your compliance requirements.",
+    price: "£2.50/user/month (£99/mo floor)",
+    description: "In-platform course builder and curriculum pathways that feed staff compliance directly.",
+    href: "/training",
   },
   {
-    name: "AI-generated Policies & Procedures",
-    description: "A full policy suite generated for your organisation, reviewed and confirmed by you.",
+    key: "policies",
+    name: "Policies & Procedures",
+    price: "£1.50/user/month + one-time £299 generation fee",
+    description: "AI-generated policy suite for your organisation, with acknowledgement tracking.",
+    href: "/policies",
   },
   {
+    key: "finance",
     name: "Finance",
+    price: "£9/desktop user/month",
     description: "Billing, invoicing and payroll export, connected to your rostered and delivered care.",
   },
+  {
+    key: "ai-supervision",
+    name: "AI-Assisted Supervision",
+    price: "£6/desktop user/month",
+    description: "AI-assisted note-taking for supervisions — a human always confirms the outcome.",
+  },
 ];
 
-export type ComparisonRow = {
-  feature: string;
-  essentials: boolean | string;
-  professional: boolean | string;
-  enterprise: boolean | string;
+export const workedExample = {
+  desktopSeats: 5,
+  mobileSeats: 30,
+  supportLevelKey: "advanced" as const,
+  core: 5 * 49 + 30 * 12, // 605
+  supportUplift: 90.75,
+  total: 695.75,
+  summary: "5 office staff + 30 care workers, Advanced support = £695.75/month",
 };
-
-export const comparisonRows: ComparisonRow[] = [
-  { feature: "Staff management", essentials: true, professional: true, enterprise: true },
-  { feature: "Client care records (CQC/CIW mapped)", essentials: true, professional: true, enterprise: true },
-  { feature: "SmartRota scheduling", essentials: true, professional: true, enterprise: true },
-  { feature: "Customisable dashboard", essentials: true, professional: true, enterprise: true },
-  { feature: "30+ built-in reports", essentials: true, professional: true, enterprise: true },
-  { feature: "Settings & configuration", essentials: true, professional: true, enterprise: true },
-  { feature: "Messaging", essentials: true, professional: true, enterprise: true },
-  { feature: "Native mobile app for care workers", essentials: false, professional: true, enterprise: true },
-  { feature: "AI-assisted cover finding", essentials: false, professional: true, enterprise: true },
-  { feature: "One-click CQC/CIW inspection packs", essentials: false, professional: true, enterprise: true },
-  { feature: "Priority support", essentials: false, professional: true, enterprise: true },
-  { feature: "Finance (billing, invoicing, payroll export)", essentials: false, professional: false, enterprise: true },
-  { feature: "AI-assisted supervision note-taking", essentials: false, professional: false, enterprise: true },
-  { feature: "Custom roles at scale", essentials: false, professional: false, enterprise: true },
-  { feature: "Dedicated support", essentials: false, professional: false, enterprise: true },
-];
 
 export type FaqItem = {
   question: string;
@@ -111,33 +207,53 @@ export type FaqItem = {
 
 export const pricingFaqs: FaqItem[] = [
   {
-    question: "What does \"per client or bed\" actually mean?",
+    question: "What counts as a \"desktop\" seat vs a \"mobile\" seat?",
     answer:
-      "For domiciliary providers, you're billed per active client receiving care. For residential providers, it's per registered bed. If you run both, we combine them into a single monthly figure — you're not paying twice for the same organisation.",
+      "Desktop seats are for office-based roles — Company Admin, Registered Manager, Care Coordinator — with full access to form builders, rostering, reports, RBAC and settings. Mobile seats are for Care Workers using the native app in the field: schedule, clock-in/EVV, MAR, notes and body maps. Every customer needs at least one desktop seat; most of your headcount will be mobile.",
   },
   {
-    question: "How is the monthly minimum applied?",
+    question: "Why are there no feature tiers?",
     answer:
-      "Each tier has a monthly minimum (from £180/mo on Essentials, £280/mo on Professional) that applies regardless of client or bed count. It covers smaller providers where a low per-unit count would otherwise price the platform below what it costs to run well. Enterprise pricing is agreed individually.",
+      "Because we don't think AI Cover Assist or the full rostering engine should be a paywalled upsell on software that's meant to help you deliver care. Every customer gets the full Core platform from day one — the only variables are seat type, support level, and which opt-in add-ons you choose.",
   },
   {
-    question: "What's the contract length?",
+    question: "How is the support uplift calculated?",
     answer:
-      "We work on annual agreements as standard, with monthly billing. Shorter pilot terms are available for providers who want to trial CareFlow with a smaller service first — ask us and we'll structure something sensible.",
+      "Advanced and Enterprise are priced as a percentage uplift on your Core spend (seats only, before add-ons), not a flat fee — so it scales fairly with the size of your organisation. Advanced is +15% (minimum £75/mo), Enterprise is +25% (minimum £250/mo). Basic is included at no extra cost.",
+  },
+  {
+    question: "Why are Inspection Report Packages priced per site instead of per seat?",
+    answer:
+      "An inspection pack draws on data from an entire site's operation — training, recruitment, incidents, medication, MCA records — regardless of how many staff work there. Pricing it per site (rather than per seat) means a smaller site isn't penalised for headcount, and a larger site isn't charged per person for one PDF.",
+  },
+  {
+    question: "What are the minimums?",
+    answer:
+      "Core platform: £150/month minimum. Advanced support: £75/month minimum uplift. Enterprise support: £250/month minimum uplift. Training & Compliance: £99/month floor. These exist so smaller providers aren't priced below what it costs us to run the platform well.",
+  },
+  {
+    question: "Is there an onboarding fee?",
+    answer:
+      "Yes, a one-time onboarding fee based on organisation size: £500 for under 20 seats, £1,200 for 20–75 seats, and £2,500+ above 75 seats. This covers data migration, configuration and training for your team.",
+  },
+  {
+    question: "Is there a discount for paying annually?",
+    answer:
+      "Yes — 10% off Core and Add-on spend if you pay upfront annually rather than monthly.",
+  },
+  {
+    question: "Do you offer volume discounts?",
+    answer:
+      "Yes — 10% off Core spend at 50+ total seats, 15% off at 150+ total seats, and a custom quote above 300 seats.",
   },
   {
     question: "Can we mix domiciliary and residential in one account?",
     answer:
-      "Yes. CareFlow is built for providers running both service types under one organisation. Your billing is calculated across combined clients and beds, and each service type gets the records and workflows it actually needs.",
-  },
-  {
-    question: "Can we add modules later?",
-    answer:
-      "Yes — Training & Compliance LMS, AI-generated Policies & Procedures and Finance can all be added to any tier as your organisation grows. Talk to us about bundling if you know you'll want more than one.",
+      "Yes. CareFlow is built for providers running both service types under one organisation, with seats and support level covering the whole organisation regardless of service mix.",
   },
   {
     question: "Do you offer a free trial or self-serve signup?",
     answer:
-      "CareFlow is sold directly, not self-serve — every organisation's setup is different, and we want to get your configuration right before you rely on it. Book a demo and we'll talk through a pilot.",
+      "CareFlow is sold directly, not self-serve — every organisation's setup is different, and we want to get your configuration right before you rely on it. Book a demo and we'll talk through a tailored quote.",
   },
 ];

@@ -71,15 +71,50 @@ export function MobileNav() {
                   </button>
                 </div>
                 <nav aria-label="Mobile" className="flex flex-col gap-1">
-                  {primaryNav.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="rounded-md px-3 py-3 font-heading text-lg font-medium text-white hover:bg-white/5"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
+                  {primaryNav.map((link) =>
+                    link.dropdown ? (
+                      <details key={link.href} className="group">
+                        <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-3 font-heading text-lg font-medium text-white marker:content-none hover:bg-white/5">
+                          {link.label}
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            aria-hidden="true"
+                            className="shrink-0 transition-transform duration-150 group-open:rotate-180"
+                          >
+                            <path
+                              d="M2.5 4.5L6 8l3.5-3.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </summary>
+                        <div className="flex flex-col gap-1 pb-2 pl-3">
+                          {link.dropdown.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="rounded-md px-3 py-2.5 font-heading text-base font-medium text-white/80 hover:bg-white/5 hover:text-white"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </details>
+                    ) : (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="rounded-md px-3 py-3 font-heading text-lg font-medium text-white hover:bg-white/5"
+                      >
+                        {link.label}
+                      </Link>
+                    ),
+                  )}
                 </nav>
                 <div className="mt-8">
                   <Button href="/book-demo" variant="primary" size="lg" className="w-full">

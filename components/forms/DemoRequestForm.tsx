@@ -26,6 +26,7 @@ export function DemoRequestForm() {
       clientCount: String(formData.get("clientCount") ?? ""),
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
+      interestedInAddOns: formData.get("interestedInAddOns") === "on",
     };
 
     try {
@@ -143,6 +144,18 @@ export function DemoRequestForm() {
           <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClasses} />
         </div>
       </div>
+
+      <label className="flex items-start gap-3 text-sm text-navy-900">
+        <input
+          type="checkbox"
+          name="interestedInAddOns"
+          className="mt-0.5 h-4 w-4 rounded border-navy-300 text-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+        />
+        <span>
+          I&rsquo;m interested in the Training &amp; Compliance or Policies &amp; Procedures
+          add-ons
+        </span>
+      </label>
 
       {status === "error" && (
         <p role="alert" className="text-sm text-red-600">

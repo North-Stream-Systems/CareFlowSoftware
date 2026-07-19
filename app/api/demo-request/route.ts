@@ -8,6 +8,7 @@ export type DemoRequestPayload = {
   clientCount: string;
   email: string;
   phone?: string;
+  interestedInAddOns: boolean;
 };
 
 function isDemoRequestPayload(value: unknown): value is DemoRequestPayload {
@@ -19,7 +20,8 @@ function isDemoRequestPayload(value: unknown): value is DemoRequestPayload {
     typeof v.role === "string" &&
     (v.careType === "domiciliary" || v.careType === "residential" || v.careType === "both") &&
     typeof v.clientCount === "string" &&
-    typeof v.email === "string"
+    typeof v.email === "string" &&
+    typeof v.interestedInAddOns === "boolean"
   );
 }
 

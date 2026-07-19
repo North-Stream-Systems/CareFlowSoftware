@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { primaryNav } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/layout/Logo";
 import { MobileNav } from "@/components/layout/MobileNav";
+import { NavDropdown } from "@/components/layout/NavDropdown";
 
 export function Header() {
   return (
@@ -20,12 +20,7 @@ export function Header() {
           <ul className="flex items-center gap-8">
             {primaryNav.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="font-heading text-sm font-medium text-white/80 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </Link>
+                <NavDropdown link={link} />
               </li>
             ))}
           </ul>

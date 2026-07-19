@@ -2,17 +2,49 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { PricingCards } from "@/components/pricing/PricingCards";
-import { ComparisonTable } from "@/components/pricing/ComparisonTable";
+import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/pricing/FaqAccordion";
+import { CoreSeatsBlock } from "@/components/pricing/CoreSeatsBlock";
+import { SupportLevelsBlock } from "@/components/pricing/SupportLevelsBlock";
+import { InspectionPackagesBlock } from "@/components/pricing/InspectionPackagesBlock";
+import { AddOnsGrid } from "@/components/pricing/AddOnsGrid";
+import { WorkedExample } from "@/components/pricing/WorkedExample";
+import { PricingCalculator } from "@/components/pricing/PricingCalculator";
 import { FinalCta } from "@/components/sections/FinalCta";
-import { addOns } from "@/lib/content/pricing";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "CareFlow pricing for domiciliary and residential care providers — three tiers, priced per client or bed, with a full feature comparison and FAQs.",
+    "CareFlow pricing for domiciliary and residential care providers — Core seats, support levels, Inspection Report Packages and add-ons, with a calculator and full FAQs.",
 };
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div className="max-w-2xl">
+      <Reveal>
+        <Eyebrow>{eyebrow}</Eyebrow>
+      </Reveal>
+      <Reveal delay={0.05}>
+        <h2 className="mt-5 text-balance font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
+          {title}
+        </h2>
+      </Reveal>
+      {description && (
+        <Reveal delay={0.1}>
+          <p className="mt-4 text-lg leading-relaxed text-slate-500">{description}</p>
+        </Reveal>
+      )}
+    </div>
+  );
+}
 
 export default function PricingPage() {
   return (
@@ -25,13 +57,15 @@ export default function PricingPage() {
             </Reveal>
             <Reveal delay={0.05}>
               <h1 className="mt-5 text-balance font-heading text-4xl font-bold text-white sm:text-5xl">
-                Priced per client or bed, not per guess
+                Four parts. No feature tiers.
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 text-lg leading-relaxed text-white/70">
-                Three tiers, straightforward monthly minimums, and no self-serve checkout — this
-                is a system your team will run on, so we agree the setup together first.
+                Core seats, a support level, Inspection Report Packages, and opt-in add-ons —
+                each priced on its own terms, not folded into one table that hides what
+                you&rsquo;ll actually pay. No self-serve checkout — this is a system your team
+                will run on, so we agree the setup together first.
               </p>
             </Reveal>
           </div>
@@ -40,55 +74,96 @@ export default function PricingPage() {
 
       <section className="bg-white py-20 sm:py-28">
         <Container>
-          <h2 className="sr-only">Pricing tiers</h2>
-          <PricingCards />
-
-          <Reveal delay={0.2}>
-            <div className="mt-12 rounded-2xl border border-navy-100 bg-offwhite p-6">
-              <p className="font-heading text-sm font-semibold uppercase tracking-widest text-slate-500">
-                Optional add-ons — for any tier
-              </p>
-              <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                {addOns.map((addOn) => (
-                  <div key={addOn.name}>
-                    <p className="font-heading text-sm font-semibold text-navy-900">{addOn.name}</p>
-                    <p className="mt-1 text-sm text-slate-500">{addOn.description}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-sm text-slate-500">Ask us about bundling.</p>
-            </div>
-          </Reveal>
+          <SectionHeading
+            eyebrow="Part 1"
+            title="Core platform — priced per user, per month"
+            description="Every customer gets the full platform. The only price variable is seat type."
+          />
+          <div className="mt-10">
+            <CoreSeatsBlock />
+          </div>
         </Container>
       </section>
 
       <section className="bg-offwhite py-20 sm:py-28">
         <Container>
-          <div className="max-w-2xl">
-            <Reveal>
-              <h2 className="font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
-                Compare tiers in full
-              </h2>
-            </Reveal>
-          </div>
+          <SectionHeading
+            eyebrow="Part 2"
+            title="Support level — chosen once, priced as an uplift on Core spend"
+          />
           <div className="mt-10">
-            <ComparisonTable />
+            <SupportLevelsBlock />
           </div>
         </Container>
       </section>
 
       <section className="bg-white py-20 sm:py-28">
         <Container>
-          <div className="mx-auto max-w-2xl">
+          <SectionHeading
+            eyebrow="Part 3"
+            title="Inspection Report Packages — priced per organisation/site"
+          />
+          <div className="mt-10">
+            <InspectionPackagesBlock id="inspection-packages" />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-offwhite py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Part 4"
+            title="Add-ons — opt-in, billed per active user"
+          />
+          <div className="mt-10">
+            <AddOnsGrid />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Worked example"
+            title="What this actually looks like on an invoice"
+          />
+          <div className="mt-10">
+            <WorkedExample />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-offwhite py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Calculator"
+            title="Estimate your own Core + Support cost"
+          />
+          <div className="mt-10 max-w-2xl">
+            <PricingCalculator />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-20 sm:py-28">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <h2 className="text-center font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
+              <h2 className="font-heading text-2xl font-bold text-navy-900 sm:text-3xl">
                 Pricing questions, answered
               </h2>
             </Reveal>
-            <div className="mt-10">
-              <FaqAccordion />
-            </div>
           </div>
+          <div className="mx-auto mt-10 max-w-2xl">
+            <FaqAccordion />
+          </div>
+          <Reveal delay={0.1}>
+            <div className="mx-auto mt-12 flex max-w-2xl justify-center">
+              <Button href="/book-demo" size="lg">
+                Get a tailored quote
+              </Button>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
