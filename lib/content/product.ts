@@ -136,7 +136,7 @@ export const techPoints: TechPoint[] = [
   {
     title: "Serious about security and access",
     description:
-      "UK data residency, ISO 27001-aligned practices, Cyber Essentials Plus, and WCAG 2.1 accessible interfaces throughout.",
+      "UK data residency, Cyber Essentials certified, and WCAG 2.1 accessible interfaces throughout.",
   },
   {
     title: "Native mobile, built for the doorstep",

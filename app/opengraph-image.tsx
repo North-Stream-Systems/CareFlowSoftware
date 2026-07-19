@@ -1,9 +1,14 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OpengraphImage() {
+  const logo = readFileSync(join(process.cwd(), "public/logo-light.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -31,28 +36,8 @@ export default function OpengraphImage() {
           }}
         />
 
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "linear-gradient(135deg, #0D1F3C 0%, #0D9488 100%)",
-              fontSize: 26,
-              fontWeight: 700,
-              color: "#F8FAFC",
-            }}
-          >
-            Cf
-          </div>
-          <div style={{ display: "flex", fontSize: 34, fontWeight: 700 }}>
-            <span style={{ color: "#F8FAFC" }}>Care</span>
-            <span style={{ color: "#2DD4BF" }}>flow</span>
-          </div>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoSrc} alt="" width={220} height={89} />
 
         <div
           style={{

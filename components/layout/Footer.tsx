@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div className="max-w-sm">
             <Link href="/" aria-label="CareFlow — home" className="inline-block">
-              <Image src="/logo.svg" alt="CareFlow" width={144} height={32} className="h-8 w-auto" />
+              <Image src="/logo-light.png" alt="CareFlow" width={1640} height={664} className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed">
               One platform for domiciliary and residential care — rostering, compliance and
@@ -69,7 +69,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} CareFlow / {siteConfig.company}. All rights reserved.
           </p>
-          <p>UK-hosted · CQC &amp; CIW ready · ISO 27001 aligned</p>
+          <p>UK-hosted · CQC &amp; CIW ready.</p>
         </div>
       </Container>
     </footer>

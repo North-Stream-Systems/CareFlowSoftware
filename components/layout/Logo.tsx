@@ -9,10 +9,10 @@ export function Logo({ className }: { className?: string }) {
       aria-label="CareFlow — home"
     >
       <Image
-        src="/logo.svg"
+        src="/logo-light.png"
         alt="CareFlow"
-        width={144}
-        height={32}
+        width={1640}
+        height={664}
         priority
         className="h-8 w-auto"
       />
