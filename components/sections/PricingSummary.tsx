@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { CoreSeatsBlock } from "@/components/pricing/CoreSeatsBlock";
 import { SupportLevelsBlock } from "@/components/pricing/SupportLevelsBlock";
+import { ContractTermBlock } from "@/components/pricing/ContractTermBlock";
 import { InspectionPackagesBlock } from "@/components/pricing/InspectionPackagesBlock";
 import { AddOnsGrid } from "@/components/pricing/AddOnsGrid";
 import { WorkedExample } from "@/components/pricing/WorkedExample";
@@ -30,14 +31,14 @@ export function PricingSummary() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-5 text-balance font-heading text-3xl font-bold text-navy-900 sm:text-4xl">
-              Four simple parts. No feature tiers.
+              Five simple parts. No feature tiers.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-4 text-lg leading-relaxed text-slate-500">
-              Core seats, a support level, Inspection Report Packages, and opt-in add-ons —
-              laid out separately because one table trying to do all four never tells you the
-              truth about what you&rsquo;ll pay.
+              Core seats, a support level with a contract-length discount, Inspection Report
+              Packages, and opt-in add-ons — laid out separately because one table trying to do
+              it all never tells you the truth about what you&rsquo;ll pay.
             </p>
           </Reveal>
         </div>
@@ -51,6 +52,11 @@ export function PricingSummary() {
           <div className="space-y-6">
             <PartHeading number="02" title="Support level" />
             <SupportLevelsBlock compact />
+          </div>
+
+          <div className="space-y-6">
+            <PartHeading number="02.5" title="Contract length discount" />
+            <ContractTermBlock />
           </div>
 
           <div className="space-y-6">

@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/ui/Reveal";
-import { supportFraming, supportLevels } from "@/lib/content/pricing";
+import { supportFraming, supportLevels, supportNote } from "@/lib/content/pricing";
 
 export function SupportLevelsBlock({ compact = false }: { compact?: boolean }) {
   return (
@@ -7,6 +7,11 @@ export function SupportLevelsBlock({ compact = false }: { compact?: boolean }) {
       <Reveal>
         <p className="max-w-2xl text-slate-500">{supportFraming}</p>
       </Reveal>
+      {!compact && (
+        <Reveal delay={0.05}>
+          <p className="mt-2 max-w-2xl font-mono text-xs text-slate-500">{supportNote}</p>
+        </Reveal>
+      )}
 
       <div className="mt-8 overflow-x-auto rounded-2xl border border-navy-100 bg-white shadow-card">
         <table className="w-full min-w-[640px] border-collapse text-left text-sm">

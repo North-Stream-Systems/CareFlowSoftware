@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/pricing/FaqAccordion";
 import { CoreSeatsBlock } from "@/components/pricing/CoreSeatsBlock";
 import { SupportLevelsBlock } from "@/components/pricing/SupportLevelsBlock";
+import { ContractTermBlock } from "@/components/pricing/ContractTermBlock";
 import { InspectionPackagesBlock } from "@/components/pricing/InspectionPackagesBlock";
 import { AddOnsGrid } from "@/components/pricing/AddOnsGrid";
+import { OnboardingBlock } from "@/components/pricing/OnboardingBlock";
 import { WorkedExample } from "@/components/pricing/WorkedExample";
 import { PricingCalculator } from "@/components/pricing/PricingCalculator";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -15,7 +17,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "CareFlow pricing for domiciliary and residential care providers — Core seats, support levels, Inspection Report Packages and add-ons, with a calculator and full FAQs.",
+    "CareFlow pricing for domiciliary and residential care providers — Core seats, support levels, a contract-length discount, Inspection Report Packages and add-ons, with a calculator and full FAQs.",
 };
 
 function SectionHeading({
@@ -57,15 +59,15 @@ export default function PricingPage() {
             </Reveal>
             <Reveal delay={0.05}>
               <h1 className="mt-5 text-balance font-heading text-4xl font-bold text-white sm:text-5xl">
-                Four parts. No feature tiers.
+                Five parts. No feature tiers.
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 text-lg leading-relaxed text-white/70">
-                Core seats, a support level, Inspection Report Packages, and opt-in add-ons —
-                each priced on its own terms, not folded into one table that hides what
-                you&rsquo;ll actually pay. No self-serve checkout — this is a system your team
-                will run on, so we agree the setup together first.
+                Core seats, a support level with a contract-length discount, Inspection Report
+                Packages, and opt-in add-ons — each priced on its own terms, not folded into one
+                table that hides what you&rsquo;ll actually pay. No self-serve checkout — this
+                is a system your team will run on, so we agree the setup together first.
               </p>
             </Reveal>
           </div>
@@ -89,7 +91,7 @@ export default function PricingPage() {
         <Container>
           <SectionHeading
             eyebrow="Part 2"
-            title="Support level — chosen once, priced as an uplift on Core spend"
+            title="Support level — chosen once, priced as a flat fee per desktop seat"
           />
           <div className="mt-10">
             <SupportLevelsBlock />
@@ -98,6 +100,19 @@ export default function PricingPage() {
       </section>
 
       <section className="bg-white py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Part 2.5"
+            title="Contract length — a discount on Core, nothing else"
+            description="Commit to a longer term and your Core seat price drops. Support, Inspection Report Packages and add-ons are unaffected."
+          />
+          <div className="mt-10 max-w-2xl">
+            <ContractTermBlock />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-offwhite py-20 sm:py-28">
         <Container>
           <SectionHeading
             eyebrow="Part 3"
@@ -109,7 +124,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-offwhite py-20 sm:py-28">
+      <section className="bg-white py-20 sm:py-28">
         <Container>
           <SectionHeading
             eyebrow="Part 4"
@@ -117,6 +132,18 @@ export default function PricingPage() {
           />
           <div className="mt-10">
             <AddOnsGrid />
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-offwhite py-20 sm:py-28">
+        <Container>
+          <SectionHeading
+            eyebrow="Onboarding & data migration"
+            title="Getting live, without a surprise bill for it"
+          />
+          <div className="mt-10">
+            <OnboardingBlock />
           </div>
         </Container>
       </section>
