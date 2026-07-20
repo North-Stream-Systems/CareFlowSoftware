@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Book a Demo",
   description:
     "Book a demo of CareFlow for your domiciliary or residential care company. Tell us about your service and we'll get back to you to find a time.",
+  alternates: {
+    canonical: "/book-demo",
+  },
 };
 
 export default function BookDemoPage() {

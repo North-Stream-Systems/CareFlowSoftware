@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Training & Compliance",
   description:
     "CareFlow's in-platform Training & Compliance LMS. Course builder, curriculum pathways and certificates that update staff compliance and rostering on their own.",
+  alternates: {
+    canonical: "/training",
+  },
 };
 
 export default function TrainingPage() {

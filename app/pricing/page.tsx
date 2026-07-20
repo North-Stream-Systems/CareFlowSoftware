@@ -13,11 +13,17 @@ import { OnboardingBlock } from "@/components/pricing/OnboardingBlock";
 import { WorkedExample } from "@/components/pricing/WorkedExample";
 import { PricingCalculator } from "@/components/pricing/PricingCalculator";
 import { FinalCta } from "@/components/sections/FinalCta";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqPageJsonLd } from "@/lib/structured-data";
+import { pricingFaqs } from "@/lib/content/pricing";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
     "CareFlow pricing for domiciliary and residential care providers. Core seats, support levels, a contract-length discount, Inspection Report Packages and add-ons, with a calculator and full FAQs.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 function SectionHeading({
@@ -43,6 +49,7 @@ function SectionHeading({
 export default function PricingPage() {
   return (
     <>
+      <JsonLd data={faqPageJsonLd(pricingFaqs)} />
       <section className="bg-navy-900 pb-20 pt-16 sm:pb-24 sm:pt-20">
         <Container>
           <div className="max-w-2xl">

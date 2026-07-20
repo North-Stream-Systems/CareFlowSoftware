@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Policies & Procedures",
   description:
     "CareFlow's AI-generated Policies & Procedures suite. A full, regulation-referenced policy set built in a day, with staff acknowledgement tracking.",
+  alternates: {
+    canonical: "/policies",
+  },
 };
 
 export default function PoliciesPage() {

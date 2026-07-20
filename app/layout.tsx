@@ -5,6 +5,8 @@ import { dmSans, heading, jetBrainsMono } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -21,9 +23,17 @@ export const metadata: Metadata = {
     "CIW compliance software",
     "care rostering software",
     "care planning software UK",
+    "care home software UK",
+    "home care scheduling software",
+    "electronic visit verification software",
+    "digital care planning software",
   ],
   authors: [{ name: siteConfig.company }],
   creator: siteConfig.company,
+  publisher: siteConfig.company,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -40,6 +50,12 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -51,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={clsx(heading.variable, dmSans.variable, jetBrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-offwhite font-sans text-navy-900 antialiased">
+        <JsonLd data={organizationJsonLd()} />
         <Header />
         <main id="main-content" className="flex-1">
           {children}

@@ -15,7 +15,7 @@ export function AddOnsGrid() {
                 href={addOn.href}
                 className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal-700 underline underline-offset-4 hover:text-teal-800"
               >
-                Learn more
+                Learn more about {addOn.name}
                 <span aria-hidden="true">→</span>
               </Link>
             )}

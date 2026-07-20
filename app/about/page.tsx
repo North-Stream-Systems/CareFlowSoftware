@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "CareFlow was founded by Cameron Darling and Edward Lunt. One ran care shifts, one worked inside care services. Here's why they built it.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
