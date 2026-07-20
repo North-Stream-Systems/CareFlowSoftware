@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/pricing/FaqAccordion";
+import { PricingQuickNav } from "@/components/pricing/PricingQuickNav";
 import { CoreSeatsBlock } from "@/components/pricing/CoreSeatsBlock";
 import { SupportLevelsBlock } from "@/components/pricing/SupportLevelsBlock";
 import { ContractTermBlock } from "@/components/pricing/ContractTermBlock";
@@ -60,7 +61,9 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <PricingQuickNav />
+
+      <section id="core" className="scroll-mt-32 bg-white py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Part 1"
@@ -73,7 +76,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-offwhite py-20 sm:py-24">
+      <section id="support" className="scroll-mt-32 bg-offwhite py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Part 2"
@@ -86,7 +89,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <section id="term" className="scroll-mt-32 bg-white py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Part 2.5"
@@ -112,7 +115,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <section id="addons" className="scroll-mt-32 bg-white py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Part 4"
@@ -125,7 +128,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-offwhite py-20 sm:py-24">
+      <section id="onboarding" className="scroll-mt-32 bg-offwhite py-20 sm:py-24">
         <Container>
           <SectionHeading
             eyebrow="Onboarding & data migration"
@@ -146,7 +149,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-offwhite py-20 sm:py-24">
+      <section id="calculator" className="scroll-mt-32 bg-offwhite py-20 sm:py-24">
         <Container>
           <SectionHeading eyebrow="Calculator" title="Work out your own Core and Support cost" />
           <div className="mt-10 max-w-2xl">
@@ -155,7 +158,7 @@ export default function PricingPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-20 sm:py-24">
+      <section id="faq" className="scroll-mt-32 bg-white py-20 sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-bold text-navy-900 sm:text-3xl">

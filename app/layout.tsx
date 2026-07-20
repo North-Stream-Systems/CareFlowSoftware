@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import clsx from "clsx";
 import "./globals.css";
-import { dmSans, jetBrainsMono, outfit } from "@/lib/fonts";
+import { dmSans, heading, jetBrainsMono } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={clsx(outfit.variable, dmSans.variable, jetBrainsMono.variable)}>
+    <html lang="en-GB" className={clsx(heading.variable, dmSans.variable, jetBrainsMono.variable)}>
       <body className="flex min-h-screen flex-col bg-offwhite font-sans text-navy-900 antialiased">
         <Header />
         <main id="main-content" className="flex-1">

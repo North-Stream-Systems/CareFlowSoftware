@@ -192,18 +192,6 @@ export const addOns: AddOn[] = [
     description: "AI-generated policy suite for your organisation, with acknowledgement tracking.",
     href: "/policies",
   },
-  {
-    key: "finance",
-    name: "Finance",
-    price: "£9/desktop user/month",
-    description: "Billing, invoicing and payroll export, connected to your rostered and delivered care.",
-  },
-  {
-    key: "ai-supervision",
-    name: "AI-Assisted Supervision",
-    price: "£6/desktop user/month",
-    description: "AI-assisted note-taking for supervisions. A human always confirms the outcome.",
-  },
 ];
 
 export type OnboardingOption = {

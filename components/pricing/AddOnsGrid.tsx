@@ -3,7 +3,7 @@ import { addOns } from "@/lib/content/pricing";
 
 export function AddOnsGrid() {
   return (
-    <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="grid max-w-2xl gap-6 sm:grid-cols-2">
       {addOns.map((addOn) => (
         <li key={addOn.key}>
           <div className="flex h-full flex-col rounded-lg border border-navy-100 bg-white p-6">

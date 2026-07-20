@@ -15,8 +15,8 @@ export default function Home() {
       <StorySection />
       <ProductOverview />
       <TechnicalEdge />
-      <PricingSummary />
       <SocialProof />
+      <PricingSummary />
       <FinalCta />
     </>
   );

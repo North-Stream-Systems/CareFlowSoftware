@@ -130,7 +130,7 @@ export const techPoints: TechPoint[] = [
   {
     title: "AI used practically, not as a gimmick",
     description:
-      "AI Cover Assist is built into Core for every customer. AI-assisted supervision notes and AI-generated policy suites are add-ons. A human confirms every one. AI doesn't decide anything that affects someone's care.",
+      "AI Cover Assist is built into Core for every customer. AI-generated policy suites are an add-on. A human confirms every one. AI doesn't decide anything that affects someone's care.",
   },
   {
     title: "Serious about security and access",

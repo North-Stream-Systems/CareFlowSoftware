@@ -1,9 +1,9 @@
-import { DM_Sans, JetBrains_Mono, Outfit } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 
-export const outfit = Outfit({
+export const heading = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-outfit",
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
   display: "swap",
 });
 
