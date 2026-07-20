@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "electronic visit verification software",
     "digital care planning software",
   ],
-  authors: [{ name: siteConfig.company }],
-  creator: siteConfig.company,
-  publisher: siteConfig.company,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   alternates: {
     canonical: "/",
   },

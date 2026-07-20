@@ -1,8 +1,8 @@
 # CareFlow marketing site
 
-Public marketing site for CareFlow (by North Stream Systems) — a UK SaaS platform for
-domiciliary and residential care providers. Built with Next.js 14 (App Router),
-TypeScript and Tailwind CSS.
+Public marketing site for CareFlow — a UK SaaS platform for domiciliary and
+residential care providers. Built with Next.js 14 (App Router), TypeScript and
+Tailwind CSS.
 
 ## Getting started
 

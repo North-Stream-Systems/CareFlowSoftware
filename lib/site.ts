@@ -1,6 +1,5 @@
 export const siteConfig = {
   name: "CareFlow",
-  company: "North Stream Systems",
   tagline: "Care software that gets out of the way.",
   description:
     "CareFlow handles rostering, compliance, care planning and staff for domiciliary and residential care providers in the UK, built for CQC and CIW. We built it after watching good care teams get let down by software made by people who'd never done the job.",

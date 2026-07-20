@@ -17,7 +17,7 @@ export function Hero() {
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-10">
           <div>
             <Reveal>
-              <Eyebrow tone="dark">North Stream Systems</Eyebrow>
+              <Eyebrow tone="dark">For UK care providers</Eyebrow>
             </Reveal>
 
             <Reveal delay={0.05}>
