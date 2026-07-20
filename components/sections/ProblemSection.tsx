@@ -12,15 +12,18 @@ export function ProblemSection() {
           It shows. Here&rsquo;s what that looks like on the ground, most weeks.
         </p>
 
-        <ul className="mt-10 max-w-3xl divide-y divide-navy-100 border-t border-navy-100">
+        <ul className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
           {problemPoints.map((point, index) => (
-            <li key={point.label} className="flex gap-5 py-6 sm:gap-8">
-              <span className="shrink-0 font-mono text-sm text-teal-700">
+            <li key={point.label} className="flex gap-5">
+              <span
+                className="shrink-0 font-mono text-6xl font-bold leading-none text-teal-600"
+                aria-hidden="true"
+              >
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <div>
+              <div className="pt-2">
                 <p className="font-heading text-lg font-semibold text-navy-900">{point.label}</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{point.detail}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-500">{point.detail}</p>
               </div>
             </li>
           ))}

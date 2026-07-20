@@ -30,22 +30,20 @@ export default function AboutPage() {
 
       <section className="bg-white py-20 sm:py-24">
         <Container>
-          <div className="mx-auto max-w-3xl space-y-20">
+          <div className="mx-auto grid max-w-5xl gap-16 sm:grid-cols-2">
             {founders.map((founder) => (
-              <div key={founder.name} className="flex flex-col gap-8 sm:flex-row">
-                <Avatar initials={founder.initials} name={founder.name} className="mx-auto sm:mx-0" />
-                <div className="text-center sm:text-left">
-                  <h2 className="font-heading text-2xl font-semibold text-navy-900">
-                    {founder.name}
-                  </h2>
-                  <p className="font-mono text-xs uppercase tracking-widest text-teal-700">
-                    {founder.role}
-                  </p>
-                  <div className="mt-4 space-y-4 text-base leading-relaxed text-slate-500">
-                    {founder.bio.map((paragraph, i) => (
-                      <p key={i}>{paragraph}</p>
-                    ))}
-                  </div>
+              <div key={founder.name} className="flex flex-col items-center text-center sm:items-start sm:text-left">
+                <Avatar initials={founder.initials} name={founder.name} />
+                <h2 className="mt-6 font-heading text-2xl font-semibold text-navy-900">
+                  {founder.name}
+                </h2>
+                <p className="font-mono text-xs uppercase tracking-widest text-teal-700">
+                  {founder.role}
+                </p>
+                <div className="mt-4 space-y-4 text-base leading-relaxed text-slate-500">
+                  {founder.bio.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
                 </div>
               </div>
             ))}

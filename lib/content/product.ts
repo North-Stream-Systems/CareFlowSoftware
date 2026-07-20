@@ -60,6 +60,17 @@ export const productModules: ProductModule[] = [
     ],
   },
   {
+    key: "finance",
+    name: "Finance",
+    summary: "Billing built from what was actually delivered, not what was planned.",
+    points: [
+      "Invoicing generated from delivered visits, not estimated ones",
+      "Payroll export matched to actual hours worked",
+      "Billing rules for local authority, private and direct payment funding",
+      "No manual reconciliation between the rota and the pay run",
+    ],
+  },
+  {
     key: "settings",
     name: "Settings & Configuration",
     summary: "You configure the workflows. We don't run a support queue for \"can you add a field.\"",

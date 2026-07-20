@@ -28,9 +28,10 @@ export function CoreSeatsBlock({ compact = false }: { compact?: boolean }) {
         ))}
       </div>
 
-      <div className="mt-6 rounded-lg border border-teal-600/30 bg-teal-50 p-6">
-        <p className="font-heading text-sm font-semibold text-navy-900">{coreDifferentiator}</p>
-        <p className="mt-2 font-mono text-xs text-slate-500">
+      <div className="mt-6 rounded-lg bg-brand-gradient p-6 sm:p-7">
+        <p className="font-mono text-xs uppercase tracking-widest text-teal-100">The difference</p>
+        <p className="mt-2 font-heading text-lg font-semibold text-white">{coreDifferentiator}</p>
+        <p className="mt-3 font-mono text-xs text-white/80">
           £{coreMinimum}/month minimum, whatever your seat mix.
         </p>
       </div>
