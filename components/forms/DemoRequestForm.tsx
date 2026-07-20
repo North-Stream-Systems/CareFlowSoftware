@@ -49,7 +49,7 @@ export function DemoRequestForm() {
     return (
       <div
         role="status"
-        className="rounded-2xl border border-teal-600/30 bg-teal-50 p-8 text-center"
+        className="rounded-lg border border-teal-600/30 bg-teal-50 p-8 text-center"
       >
         <p className="font-heading text-lg font-semibold text-navy-900">
           Thanks — that&rsquo;s with us.
@@ -159,7 +159,7 @@ export function DemoRequestForm() {
 
       {status === "error" && (
         <p role="alert" className="text-sm text-red-600">
-          Something went wrong sending that — please try again, or email{" "}
+          Something went wrong sending that. Please try again, or email{" "}
           <a href="mailto:hello@careflow.co.uk" className="underline">
             hello@careflow.co.uk
           </a>

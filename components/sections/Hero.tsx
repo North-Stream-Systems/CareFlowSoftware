@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative overflow-hidden bg-navy-900 pb-20 pt-16 sm:pb-28 sm:pt-24">
       {/* Ambient teal glow, decorative only */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-glow-teal blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-glow-teal opacity-70 blur-2xl"
         aria-hidden="true"
       />
 
@@ -31,10 +31,9 @@ export function Hero() {
 
             <Reveal delay={0.1}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-                CareFlow is a full platform for domiciliary and residential care —
-                rostering, compliance, care planning and staff, all in one place.
-                Built for CQC and CIW, by people who&rsquo;ve actually run care shifts —
-                not just sold software to them.
+                CareFlow handles rostering, compliance, care planning and staff for
+                domiciliary and residential care, all in one place. Built for CQC and CIW,
+                by two people who&rsquo;ve actually run care shifts.
               </p>
             </Reveal>
 
@@ -51,9 +50,7 @@ export function Hero() {
           </div>
 
           <Reveal delay={0.15} className="lg:pl-4">
-            <div className="lg:-rotate-1">
-              <DashboardMockup />
-            </div>
+            <DashboardMockup />
           </Reveal>
         </div>
       </Container>

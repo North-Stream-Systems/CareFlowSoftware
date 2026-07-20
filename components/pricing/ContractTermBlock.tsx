@@ -9,7 +9,7 @@ export function ContractTermBlock() {
   const term = contractTerms.find((t) => t.years === years) ?? contractTerms[0];
 
   return (
-    <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-card">
+    <div className="rounded-lg border border-navy-100 bg-white p-8">
       <fieldset>
         <legend className="font-heading text-sm font-medium text-navy-900">Contract length</legend>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -58,7 +58,8 @@ export function ContractTermBlock() {
         {term.discountPercent > 0 ? `${term.discountPercent}% off Core, locked in for ${term.years} years` : "Standard Core pricing"}
       </p>
       <p className="mt-2 text-xs text-slate-500">
-        Applies to Core seat price only — support, Inspection Report Packages and add-ons don&rsquo;t change with term length.
+        This only touches the Core seat price. Support, Inspection Report Packages and add-ons
+        stay the same whatever term you pick.
       </p>
     </div>
   );

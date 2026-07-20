@@ -1,11 +1,10 @@
-import { Reveal } from "@/components/ui/Reveal";
 import { timeline } from "@/lib/content/timeline";
 
 export function Timeline() {
   return (
     <ol className="relative space-y-10 border-l border-navy-100 pl-8">
-      {timeline.map((item, index) => (
-        <Reveal as="li" key={item.title} delay={0.05 * index} className="relative">
+      {timeline.map((item) => (
+        <li key={item.title} className="relative">
           <span
             className="absolute -left-[2.35rem] top-1 h-3 w-3 rounded-full bg-brand-gradient"
             aria-hidden="true"
@@ -17,7 +16,7 @@ export function Timeline() {
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">
             {item.description}
           </p>
-        </Reveal>
+        </li>
       ))}
     </ol>
   );

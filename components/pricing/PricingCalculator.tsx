@@ -21,7 +21,7 @@ export function PricingCalculator() {
   }, [desktopSeats, mobileSeats, supportKey, termYears]);
 
   return (
-    <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-card">
+    <div className="rounded-lg border border-navy-100 bg-white p-8">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="calc-desktop" className="font-heading text-sm font-medium text-navy-900">
@@ -96,7 +96,7 @@ export function PricingCalculator() {
       </fieldset>
 
       <div
-        className="mt-8 grid gap-4 rounded-2xl bg-offwhite p-6 font-mono text-sm sm:grid-cols-3"
+        className="mt-8 grid gap-4 rounded-lg bg-offwhite p-6 font-mono text-sm sm:grid-cols-3"
         aria-live="polite"
       >
         <div>
@@ -118,7 +118,8 @@ export function PricingCalculator() {
         </div>
       </div>
       <p className="mt-3 text-xs text-slate-500">
-        Estimate for Core + Support only — excludes Inspection Report Packages and add-ons.
+        This is Core plus Support only. It doesn&rsquo;t include Inspection Report Packages or
+        add-ons.
       </p>
     </div>
   );

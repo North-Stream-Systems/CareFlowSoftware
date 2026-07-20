@@ -1,19 +1,12 @@
-import { Reveal } from "@/components/ui/Reveal";
 import { supportFraming, supportLevels, supportNote } from "@/lib/content/pricing";
 
 export function SupportLevelsBlock({ compact = false }: { compact?: boolean }) {
   return (
     <div>
-      <Reveal>
-        <p className="max-w-2xl text-slate-500">{supportFraming}</p>
-      </Reveal>
-      {!compact && (
-        <Reveal delay={0.05}>
-          <p className="mt-2 max-w-2xl font-mono text-xs text-slate-500">{supportNote}</p>
-        </Reveal>
-      )}
+      <p className="max-w-2xl text-slate-500">{supportFraming}</p>
+      {!compact && <p className="mt-2 max-w-2xl font-mono text-xs text-slate-500">{supportNote}</p>}
 
-      <div className="mt-8 overflow-x-auto rounded-2xl border border-navy-100 bg-white shadow-card">
+      <div className="mt-8 overflow-x-auto rounded-lg border border-navy-100 bg-white">
         <table className="w-full min-w-[640px] border-collapse text-left text-sm">
           <caption className="sr-only">Support level comparison</caption>
           <thead>
@@ -44,7 +37,7 @@ export function SupportLevelsBlock({ compact = false }: { compact?: boolean }) {
               ))}
             </tr>
             <tr className="border-b border-navy-100">
-              <th scope="row" className="px-6 py-4 font-normal text-slate-600">Response — critical</th>
+              <th scope="row" className="px-6 py-4 font-normal text-slate-600">Critical response</th>
               {supportLevels.map((level) => (
                 <td key={level.key} className="px-6 py-4 font-mono text-xs text-navy-900">
                   {level.responseCritical}
@@ -52,7 +45,7 @@ export function SupportLevelsBlock({ compact = false }: { compact?: boolean }) {
               ))}
             </tr>
             <tr className={compact ? undefined : "border-b border-navy-100 bg-offwhite/60"}>
-              <th scope="row" className="px-6 py-4 font-normal text-slate-600">Response — standard</th>
+              <th scope="row" className="px-6 py-4 font-normal text-slate-600">Standard response</th>
               {supportLevels.map((level) => (
                 <td key={level.key} className="px-6 py-4 font-mono text-xs text-navy-900">
                   {level.responseStandard}

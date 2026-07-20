@@ -2,8 +2,8 @@ export const whyNow = {
   eyebrow: "Why now",
   heading: "Care providers are done waiting for their software to catch up",
   paragraphs: [
-    "CQC and CIW expectations keep rising. Staff are harder to recruit and retain than ever. Margins in care are tight, and every hour a manager spends fighting a login screen or re-entering data into three systems is an hour not spent on the floor with staff and clients.",
-    "Most of the incumbent care software in the UK was built a decade or more ago, by companies with no one on the team who's actually delivered care. It shows in the workflows, in the support, in what breaks and when.",
-    "We think there's a narrow window right now — where AI can genuinely remove admin load instead of adding another dashboard to check, and where a smaller, focused team can move faster than the incumbents who are maintaining legacy systems. That's the window CareFlow is built for.",
+    "CQC and CIW expectations keep going up. Staff are harder to find and keep than they used to be. Margins are tight. Every hour a manager spends fighting a login screen, or typing the same thing into three systems, is an hour they're not spending with staff or clients.",
+    "Most of the care software already out there in the UK was built a decade or more ago, by companies that didn't have anyone on the team who'd actually delivered care. You can tell. Workflows that don't match how a real shift runs. Support that doesn't get it. Things that break at the worst possible time.",
+    "We're not going to pretend we're the only people who've noticed care software needs a rebuild. But we think a small team that's actually done the job can move faster than companies still maintaining what they built fifteen years ago. That's the bet we're making.",
   ],
 };

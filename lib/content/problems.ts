@@ -7,19 +7,21 @@ export type ProblemPoint = {
 // pulled from lived experience running and working in care, not survey data.
 export const problemPoints: ProblemPoint[] = [
   {
-    label: "Hours lost to paperwork",
-    detail: "Time that should go to care and to staff goes into forms, instead.",
+    label: "Paperwork instead of care",
+    detail:
+      "The same training record, typed into three different systems. A form nobody reads. That's a chunk of most days, and it's not the bit anyone signed up for.",
   },
   {
-    label: "Compliance on spreadsheets and sticky notes",
-    detail: "Tracked by memory and good intentions, not by the system that's supposed to help.",
+    label: "Compliance tracked on a whiteboard",
+    detail:
+      "We've seen it done on a spreadsheet, a wall planner, and more than one sticky note stuck to a monitor. It works, right up until the person who remembers where everything is takes a day off.",
   },
   {
-    label: "Software that breaks when it matters most",
-    detail: "Mid-visit, mid-inspection, mid-crisis — exactly when you can least afford it to.",
+    label: "It goes down on the Saturday you need it",
+    detail: "Rota software that falls over at 6am when three carers have rung in sick isn't a minor inconvenience. It's a missed visit.",
   },
   {
-    label: "Built by people who've never delivered care",
-    detail: "So managers spend more time fighting the software than supporting staff and clients.",
+    label: "Built by people who've never done a shift",
+    detail: "So the manager ends up managing the software, not the team.",
   },
 ];

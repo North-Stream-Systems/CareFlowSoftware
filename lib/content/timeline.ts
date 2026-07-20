@@ -9,30 +9,30 @@ export const timeline: TimelineItem[] = [
     period: "The problem",
     title: "North Wales, on the ground",
     description:
-      "Cameron spends four years inside a family-run care home and domiciliary company, watching software slow down the people it was supposed to help. Edward spends two years working directly in child and elderly care services, seeing the same pattern from a different seat.",
+      "Cameron spent four years inside a family-run care home and domiciliary company, watching software slow the whole team down instead of helping them. Edward spent two years in child and elderly care services. Same pattern, different seat.",
   },
   {
     period: "The decision",
     title: "Two people, one frustration",
     description:
-      "Cameron and Edward compare notes on what they'd both lived through — and realise the fix wasn't going to come from inside the existing care software vendors. They decide to build it themselves.",
+      "Cameron and Edward compared notes on what they'd both lived through. Neither of them thought the fix was coming from inside the existing vendors, so they decided to build it themselves.",
   },
   {
     period: "The build",
     title: "Platform built with a real provider",
     description:
-      "CareFlow is built module by module — Staff, Clients, Rostering, Reports — grounded in a North Wales care provider's actual day-to-day operation, not a generic feature list.",
+      "CareFlow got built module by module: Staff, Clients, Rostering, Reports. Every one shaped by an actual North Wales care provider's day-to-day, not a feature list drawn up in a meeting.",
   },
   {
     period: "The pilot",
     title: "Piloted with a North Wales care provider",
     description:
-      "The platform goes live with a real domiciliary and residential provider, testing rostering, compliance and care records against real shifts, real inspections and real edge cases.",
+      "The platform went live with a real domiciliary and residential provider. Rostering, compliance and care records, tested against actual shifts and an actual inspection, not a demo environment.",
   },
   {
     period: "Now",
     title: "Opening up to more care companies",
     description:
-      "CareFlow is ready for other domiciliary and residential providers across the UK who want software built by people who understand what a care shift actually looks like.",
+      "Now we're opening it up to other domiciliary and residential providers across the UK. Same platform, built by people who've actually done the job.",
   },
 ];

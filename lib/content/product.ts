@@ -9,7 +9,7 @@ export const productModules: ProductModule[] = [
   {
     key: "staff",
     name: "Staff",
-    summary: "The full employment lifecycle, in one place.",
+    summary: "From the first job application to the last appraisal, without switching systems.",
     points: [
       "Candidate pipeline and onboarding",
       "Compliance tracking and training records",
@@ -20,9 +20,9 @@ export const productModules: ProductModule[] = [
   {
     key: "clients",
     name: "Clients",
-    summary: "Complete care records, built the way you actually work.",
+    summary: "Care plans you write yourself. Not a template built for a company that isn't yours.",
     points: [
-      "Care plans and risk assessments you build — no rigid templates",
+      "Care plans and risk assessments, no rigid templates",
       "Medication management with MAR charts",
       "Incidents, complaints and safeguarding logs",
       "Mental capacity records, all CQC/CIW mapped",
@@ -31,50 +31,50 @@ export const productModules: ProductModule[] = [
   {
     key: "rostering",
     name: "Rostering",
-    summary: "SmartRota — built for the reality of last-minute change.",
+    summary: "SmartRota. Because rotas fall apart the moment someone rings in sick, and that happens most weeks.",
     points: [
       "Template-based scheduling for recurring patterns",
       "Live drag-and-drop day view",
       "AI-assisted cover suggestions when someone calls in sick",
-      "Unassigned visit alerts before they become missed visits",
+      "Unassigned visit alerts before they turn into missed visits",
     ],
   },
   {
     key: "dashboard",
     name: "Dashboard",
-    summary: "One home screen. Built by every user, for what they need.",
+    summary: "Every user sets up their own home screen. A coordinator's view shouldn't look like an admin's.",
     points: [
       "Fully customisable widget layout",
       "Different views for managers, coordinators and office staff",
-      "Live status, not static reporting",
+      "Live status, not a static report from this morning",
     ],
   },
   {
     key: "reports",
     name: "Reports",
-    summary: "30+ built-in reports on everything you're already recording.",
+    summary: "Reports on what you're already putting into the system.",
     points: [
       "Operational, compliance and staffing reports",
       "Exportable, audit-ready formatting",
-      "One-click CQC/CIW inspection packs available as an add-on — see Inspection Report Packages",
+      "CQC/CIW inspection packs are a separate add-on. See Inspection Report Packages.",
     ],
   },
   {
     key: "settings",
     name: "Settings & Configuration",
-    summary: "Your workflows, your rules — no developer required.",
+    summary: "You configure the workflows. We don't run a support queue for \"can you add a field.\"",
     points: [
       "Every workflow and form is configurable by you",
       "Compliance rules matched to your organisation",
-      "No waiting on a vendor for changes that should take minutes",
+      "Changes that used to be a support ticket now take minutes",
     ],
   },
 ];
 
 export const productCallouts: string[] = [
-  "Built CQC & CIW ready from day one",
-  "UK-hosted, UK data residency",
-  "Fully configurable — no two care companies work the same way, so your software shouldn't force them to.",
+  "Mapped to CQC and CIW from day one",
+  "Hosted in the UK, UK data residency",
+  "No two care companies run the same way. We stopped pretending they should.",
 ];
 
 export type AddOnModule = {
@@ -90,7 +90,7 @@ export const addOnModules: AddOnModule[] = [
     key: "training",
     name: "Training & Compliance",
     summary:
-      "In-platform course builder and curriculum pathways. Course completion auto-populates staff compliance — no manual re-entry.",
+      "Build the course once. When someone finishes it, their Staff record updates on its own, and rostering unblocks them for that shift type.",
     href: "/training",
     linkLabel: "Learn more",
   },
@@ -98,15 +98,14 @@ export const addOnModules: AddOnModule[] = [
     key: "policies",
     name: "Policies & Procedures",
     summary:
-      "A full, regulation-referenced policy suite generated for your organisation in minutes, with staff acknowledgement tracking.",
+      "Answer some questions about your organisation and get a full, regulation-referenced policy suite back. Staff acknowledgement is tracked automatically.",
     href: "/policies",
     linkLabel: "Learn more",
   },
   {
     key: "inspection-packages",
     name: "Inspection Report Packages",
-    summary:
-      "One-click, inspector-ready CQC/CIW packs generated from data across the whole platform.",
+    summary: "Pulls training, incidents, medication and MCA records into one PDF, ready for the inspector.",
     href: "/pricing#inspection-packages",
     linkLabel: "See pricing",
   },
@@ -119,28 +118,27 @@ export type TechPoint = {
 
 export const techPoints: TechPoint[] = [
   {
-    title: "Modern architecture, built for reliability",
+    title: "No legacy tech debt",
     description:
-      "No legacy tech debt to work around. CareFlow is built on a modern stack designed to stay up when you need it — not patched together over a decade.",
+      "We started this in the last couple of years, on a modern stack. There's no decade of patches underneath it, because there's no decade.",
   },
   {
     title: "Custom role-based permissions",
     description:
-      "Not a fixed list of roles. Define exactly who can see and do what, down to the individual permission — matched to how your organisation is actually structured.",
+      "Not a fixed list of roles. You define who can see and do what, down to the individual permission, matched to how your organisation is actually structured.",
   },
   {
     title: "AI used practically, not as a gimmick",
     description:
-      "AI Cover Assist is built into Core for every customer. AI-assisted supervision note-taking and AI-generated policy suites are available as add-ons. A human always confirms. AI never auto-decides anything that affects care.",
+      "AI Cover Assist is built into Core for every customer. AI-assisted supervision notes and AI-generated policy suites are add-ons. A human confirms every one. AI doesn't decide anything that affects someone's care.",
   },
   {
     title: "Serious about security and access",
-    description:
-      "UK data residency, Cyber Essentials certified, and WCAG 2.1 accessible interfaces throughout.",
+    description: "UK data residency. Cyber Essentials certified. WCAG 2.1 accessible interfaces throughout.",
   },
   {
     title: "Native mobile, built for the doorstep",
     description:
-      "Purpose-built mobile apps for care workers — designed for one-handed use standing at a client's door, not a shrunken-down desktop screen.",
+      "A carer standing at someone's door in the rain needs one hand free for the app. That's the design brief. It's a proper mobile app, not a website squeezed onto a phone.",
   },
 ];

@@ -3,7 +3,7 @@ export const siteConfig = {
   company: "North Stream Systems",
   tagline: "Care software that gets out of the way.",
   description:
-    "CareFlow is a full platform for domiciliary and residential care companies — rostering, compliance, care planning and staff, built for CQC and CIW. Built by people who've run care shifts, not just sold software to them.",
+    "CareFlow handles rostering, compliance, care planning and staff for domiciliary and residential care providers in the UK, built for CQC and CIW. We built it after watching good care teams get let down by software made by people who'd never done the job.",
   url: "https://careflow.example.com",
   contactEmail: "hello@careflow.co.uk",
   foundersEmail: "founders@careflow.co.uk",
@@ -35,7 +35,7 @@ export const primaryNav: NavLink[] = [
       {
         label: "Training & Compliance",
         href: "/training",
-        description: "In-platform LMS that feeds compliance automatically",
+        description: "In-platform LMS that updates staff compliance on its own",
       },
       {
         label: "Policies & Procedures",

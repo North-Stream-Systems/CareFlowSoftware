@@ -13,13 +13,13 @@ export function FinalCta() {
       <Container className="relative text-center">
         <Reveal>
           <h2 className="text-balance font-heading text-3xl font-bold text-white sm:text-4xl">
-            Ready to see CareFlow?
+            See it running, not a slide deck
           </h2>
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
-            Book a demo and we&rsquo;ll walk through your rota, your compliance workload and
-            where CareFlow actually saves your team time.
+            Book a demo and we&rsquo;ll walk through your rota and your compliance workload,
+            and show you where CareFlow actually saves your team time.
           </p>
         </Reveal>
         <Reveal delay={0.1}>

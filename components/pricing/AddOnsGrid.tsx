@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { Reveal } from "@/components/ui/Reveal";
 import { addOns } from "@/lib/content/pricing";
 
 export function AddOnsGrid() {
   return (
     <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {addOns.map((addOn, index) => (
-        <Reveal as="li" key={addOn.key} delay={0.05 * index}>
-          <div className="flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 shadow-card">
+      {addOns.map((addOn) => (
+        <li key={addOn.key}>
+          <div className="flex h-full flex-col rounded-lg border border-navy-100 bg-white p-6">
             <h3 className="font-heading text-base font-semibold text-navy-900">{addOn.name}</h3>
             <p className="mt-2 font-mono text-xs text-teal-700">{addOn.price}</p>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-500">{addOn.description}</p>
@@ -21,7 +20,7 @@ export function AddOnsGrid() {
               </Link>
             )}
           </div>
-        </Reveal>
+        </li>
       ))}
     </ul>
   );

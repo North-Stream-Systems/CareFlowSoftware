@@ -33,7 +33,7 @@ export default function BookDemoPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-navy-100 bg-white p-8 shadow-card">
+          <div className="rounded-lg border border-navy-100 bg-white p-8 shadow-card">
             <DemoRequestForm />
           </div>
         </div>

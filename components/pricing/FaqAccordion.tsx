@@ -2,7 +2,7 @@ import { pricingFaqs } from "@/lib/content/pricing";
 
 export function FaqAccordion() {
   return (
-    <div className="divide-y divide-navy-100 rounded-2xl border border-navy-100 bg-white shadow-card">
+    <div className="divide-y divide-navy-100 rounded-lg border border-navy-100 bg-white">
       {pricingFaqs.map((faq) => (
         <details key={faq.question} className="group px-6 py-2 open:pb-5">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-base font-semibold text-navy-900 marker:content-none">
